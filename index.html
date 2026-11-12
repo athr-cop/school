@@ -1,0 +1,3150 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مدرسة الشيخ سعود بن صقر الخيرية الخاصة - فرع 2 | بوابة الفعاليات والإنجازات</title>
+    <!-- خط Cairo من Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- أيقونات Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        /* ==========================================================================
+           1. المتغيرات والهوية البصرية (مستوحاة من شعار مدرسة الشيخ سعود بن صقر)
+           ========================================================================== */
+        :root {
+            --primary: #0E958E;          /* التركوازي الأساسي */
+            --primary-dark: #09736D;     /* تركوازي داكن للتفاعل */
+            --primary-light: #E6F6F5;    /* خلفية تركوازية ناعمة */
+            --secondary-blue: #2799D6;   /* الأزرق السماوي */
+            --secondary-green: #4DB149;  /* الأخضر الحيوي */
+            --accent-lime: #8BC34A;      /* الأخضر الفاتح */
+            --bg-white: #FFFFFF;         /* خلفية بيضاء نقية */
+            --bg-soft: #F8FAFC;          /* خلفية رمادية فاتحة للأقسام الثانوية */
+            --text-dark: #1E293B;        /* لون النصوص الأساسي */
+            --text-muted: #64748B;       /* لون النصوص الفرعية */
+            --border-color: #E2E8F0;     /* لون الحدود الناعمة */
+            --danger: #EF4444;           /* لون الحذف والتنبيهات */
+            --warning: #F59E0B;          /* لون التعديل والجوائز */
+            --shadow-sm: 0 4px 12px rgba(14, 149, 142, 0.06);
+            --shadow-md: 0 12px 28px rgba(15, 23, 42, 0.08);
+            --shadow-lg: 0 20px 40px rgba(14, 149, 142, 0.15);
+            --radius-md: 14px;
+            --radius-lg: 22px;
+            --transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* ==========================================================================
+           2. الإعدادات العامة (Reset & Base Styles)
+           ========================================================================== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Cairo', sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 85px;
+        }
+
+        body {
+            background-color: var(--bg-white);
+            color: var(--text-dark);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        button, input, select, textarea {
+            font-family: 'Cairo', sans-serif;
+            border: none;
+            outline: none;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* عناوين الأقسام */
+        .section-header {
+            text-align: center;
+            max-width: 720px;
+            margin: 0 auto 50px;
+        }
+
+        .section-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(135deg, rgba(14, 149, 142, 0.12), rgba(39, 153, 214, 0.12));
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 0.9rem;
+            padding: 6px 18px;
+            border-radius: 50px;
+            margin-bottom: 14px;
+            border: 1px solid rgba(14, 149, 142, 0.2);
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--text-dark);
+            margin-bottom: 12px;
+            position: relative;
+        }
+
+        .section-title span {
+            background: linear-gradient(135deg, var(--primary), var(--secondary-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .section-subtitle {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+        }
+
+        /* ==========================================================================
+           3. الشريط العلوي (Navbar)
+           ========================================================================== */
+        .navbar {
+            position: fixed;
+            top: 0;
+            right: 0;
+            left: 0;
+            height: 84px;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            box-shadow: 0 2px 20px rgba(15, 23, 42, 0.06);
+            z-index: 1000;
+            transition: var(--transition);
+            border-bottom: 3px solid transparent;
+            border-image: linear-gradient(90deg, var(--primary), var(--secondary-blue), var(--secondary-green), var(--accent-lime)) 1;
+        }
+
+        .navbar .container {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .brand-logo-wrap {
+            width: 56px;
+            height: 56px;
+            border-radius: 14px;
+            background: var(--bg-soft);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 4px;
+            border: 2px solid rgba(14, 149, 142, 0.2);
+            box-shadow: var(--shadow-sm);
+            flex-shrink: 0;
+            overflow: hidden;
+        }
+
+        .brand-logo-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .brand-text h1 {
+            font-size: 1.08rem;
+            font-weight: 800;
+            color: var(--text-dark);
+            line-height: 1.3;
+        }
+
+        .brand-text span {
+            display: inline-block;
+            font-size: 0.78rem;
+            font-weight: 700;
+            color: var(--primary);
+            background: var(--primary-light);
+            padding: 2px 10px;
+            border-radius: 20px;
+            margin-top: 2px;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+        }
+
+        .nav-links a {
+            font-weight: 700;
+            font-size: 0.98rem;
+            color: var(--text-dark);
+            position: relative;
+            padding: 6px 0;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 0;
+            height: 3px;
+            border-radius: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary-blue));
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--primary);
+        }
+
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            width: 100%;
+        }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .btn-admin {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary-blue));
+            color: #fff;
+            font-weight: 700;
+            font-size: 0.92rem;
+            padding: 10px 20px;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 6px 18px rgba(14, 149, 142, 0.25);
+            transition: var(--transition);
+        }
+
+        .btn-admin:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 24px rgba(14, 149, 142, 0.35);
+        }
+
+        .btn-admin .status-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #8BC34A;
+            display: none;
+        }
+
+        .btn-admin.logged-in .status-dot {
+            display: inline-block;
+            box-shadow: 0 0 0 3px rgba(139, 195, 74, 0.35);
+        }
+
+        .menu-toggle {
+            display: none;
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            background: var(--bg-soft);
+            color: var(--text-dark);
+            font-size: 1.25rem;
+            cursor: pointer;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid var(--border-color);
+        }
+
+        /* القائمة الجانبية للجوال */
+        .mobile-drawer-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(15, 23, 42, 0.5);
+            backdrop-filter: blur(4px);
+            z-index: 1100;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+        }
+
+        .mobile-drawer-overlay.open {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .mobile-drawer {
+            position: fixed;
+            top: 0;
+            right: -320px;
+            width: 300px;
+            height: 100vh;
+            background: var(--bg-white);
+            z-index: 1200;
+            padding: 28px 24px;
+            box-shadow: -10px 0 30px rgba(0, 0, 0, 0.15);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .mobile-drawer.open {
+            right: 0;
+        }
+
+        .drawer-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .drawer-close {
+            width: 38px;
+            height: 38px;
+            border-radius: 10px;
+            background: var(--bg-soft);
+            color: var(--text-dark);
+            font-size: 1.1rem;
+            cursor: pointer;
+        }
+
+        .drawer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin: 28px 0 auto;
+        }
+
+        .drawer-links a {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 16px;
+            border-radius: 12px;
+            font-weight: 700;
+            color: var(--text-dark);
+            background: var(--bg-soft);
+        }
+
+        .drawer-links a i {
+            color: var(--primary);
+            width: 22px;
+            text-align: center;
+        }
+
+        .drawer-links a:hover {
+            background: var(--primary-light);
+            color: var(--primary);
+        }
+
+        /* ==========================================================================
+           4. القسم الترحيبي (Hero Section) وشريط الإحصائيات
+           ========================================================================== */
+        .hero {
+            padding: 145px 0 90px;
+            position: relative;
+            background:
+                radial-gradient(circle at 15% 20%, rgba(39, 153, 214, 0.10) 0%, transparent 45%),
+                radial-gradient(circle at 85% 30%, rgba(14, 149, 142, 0.12) 0%, transparent 50%),
+                radial-gradient(circle at 50% 90%, rgba(77, 177, 73, 0.09) 0%, transparent 45%),
+                linear-gradient(180deg, #F4FBF9 0%, #FFFFFF 100%);
+            overflow: hidden;
+        }
+
+        .hero-decor {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(60px);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .hero-decor.d1 {
+            width: 320px;
+            height: 320px;
+            background: rgba(14, 149, 142, 0.12);
+            top: -80px;
+            right: -80px;
+        }
+
+        .hero-decor.d2 {
+            width: 280px;
+            height: 280px;
+            background: rgba(39, 153, 214, 0.12);
+            bottom: 40px;
+            left: -70px;
+        }
+
+        .hero-grid {
+            position: relative;
+            z-index: 1;
+            display: grid;
+            grid-template-columns: 1.15fr 0.85fr;
+            gap: 48px;
+            align-items: center;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: #fff;
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            color: var(--primary);
+            box-shadow: var(--shadow-sm);
+            border: 1px solid rgba(14, 149, 142, 0.2);
+            margin-bottom: 22px;
+        }
+
+        .hero-badge i {
+            color: var(--secondary-green);
+        }
+
+        .hero-title {
+            font-size: 2.75rem;
+            font-weight: 900;
+            line-height: 1.35;
+            color: var(--text-dark);
+            margin-bottom: 20px;
+        }
+
+        .hero-title .highlight {
+            background: linear-gradient(135deg, var(--primary), var(--secondary-blue), var(--secondary-green));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-desc {
+            font-size: 1.12rem;
+            color: var(--text-muted);
+            margin-bottom: 32px;
+            max-width: 620px;
+        }
+
+        .hero-btns {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary-blue));
+            color: #fff;
+            font-weight: 700;
+            font-size: 1rem;
+            padding: 14px 30px;
+            border-radius: 50px;
+            box-shadow: 0 10px 25px rgba(14, 149, 142, 0.3);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 14px 30px rgba(14, 149, 142, 0.4);
+        }
+
+        .btn-outline {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: #fff;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 1rem;
+            padding: 14px 28px;
+            border-radius: 50px;
+            border: 2px solid var(--primary);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .btn-outline:hover {
+            background: var(--primary);
+            color: #fff;
+            transform: translateY(-3px);
+        }
+
+        /* بطاقة العرض البصري في القسم الترحيبي */
+        .hero-showcase {
+            position: relative;
+        }
+
+        .showcase-card {
+            background: #fff;
+            border-radius: var(--radius-lg);
+            padding: 24px;
+            box-shadow: var(--shadow-lg);
+            border: 1px solid rgba(14, 149, 142, 0.15);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .showcase-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: 0;
+            height: 6px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary-blue), var(--secondary-green), var(--accent-lime));
+        }
+
+        .showcase-banner {
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+            height: 270px;
+            margin-bottom: 20px;
+        }
+
+        .showcase-banner img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .showcase-card:hover .showcase-banner img {
+            transform: scale(1.05);
+        }
+
+        .showcase-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(15, 23, 42, 0.8), transparent 60%);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 20px;
+            color: #fff;
+        }
+
+        .showcase-overlay span {
+            font-size: 0.82rem;
+            background: var(--secondary-green);
+            padding: 3px 12px;
+            border-radius: 20px;
+            align-self: flex-start;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+
+        .showcase-overlay h3 {
+            font-size: 1.2rem;
+            font-weight: 800;
+        }
+
+        .showcase-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+        }
+
+        .showcase-school-Id {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .showcase-school-Id img {
+            width: 46px;
+            height: 46px;
+            object-fit: contain;
+            border-radius: 10px;
+            background: var(--bg-soft);
+            padding: 4px;
+        }
+
+        .showcase-school-Id div h4 {
+            font-size: 0.95rem;
+            font-weight: 800;
+            color: var(--text-dark);
+        }
+
+        .showcase-school-Id div p {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        /* شريط الإحصائيات المتحركة */
+        .stats-bar {
+            margin-top: 64px;
+            background: #fff;
+            border-radius: var(--radius-lg);
+            padding: 32px 28px;
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--border-color);
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .stat-item {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            padding: 10px 14px;
+            border-radius: 16px;
+            transition: var(--transition);
+        }
+
+        .stat-item:hover {
+            background: var(--bg-soft);
+            transform: translateY(-3px);
+        }
+
+        .stat-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+            flex-shrink: 0;
+        }
+
+        .stat-item:nth-child(1) .stat-icon {
+            background: rgba(14, 149, 142, 0.12);
+            color: var(--primary);
+        }
+        .stat-item:nth-child(2) .stat-icon {
+            background: rgba(39, 153, 214, 0.12);
+            color: var(--secondary-blue);
+        }
+        .stat-item:nth-child(3) .stat-icon {
+            background: rgba(77, 177, 73, 0.12);
+            color: var(--secondary-green);
+        }
+        .stat-item:nth-child(4) .stat-icon {
+            background: rgba(139, 195, 74, 0.16);
+            color: #558B2F;
+        }
+
+        .stat-info h3 {
+            font-size: 2rem;
+            font-weight: 900;
+            color: var(--text-dark);
+            line-height: 1.1;
+        }
+
+        .stat-info p {
+            font-size: 0.92rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            margin-top: 4px;
+        }
+
+        /* ==========================================================================
+           5. قسم الحفلات والفعاليات المدرسية
+           ========================================================================== */
+        .events-section {
+            padding: 95px 0;
+            background: var(--bg-white);
+        }
+
+        .filter-bar {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 42px;
+        }
+
+        .filter-btn {
+            padding: 10px 26px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.96rem;
+            background: var(--bg-soft);
+            color: var(--text-muted);
+            border: 1px solid var(--border-color);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .filter-btn:hover {
+            color: var(--primary);
+            border-color: var(--primary);
+        }
+
+        .filter-btn.active {
+            background: linear-gradient(135deg, var(--primary), var(--secondary-blue));
+            color: #fff;
+            border-color: transparent;
+            box-shadow: 0 8px 20px rgba(14, 149, 142, 0.25);
+        }
+
+        .events-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 30px;
+        }
+
+        .event-card {
+            background: var(--bg-white);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border-color);
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .event-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+            border-color: rgba(14, 149, 142, 0.35);
+        }
+
+        .event-thumb {
+            position: relative;
+            height: 230px;
+            overflow: hidden;
+            background: var(--bg-soft);
+        }
+
+        .event-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .event-card:hover .event-thumb img {
+            transform: scale(1.07);
+        }
+
+        .event-badge {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            padding: 5px 15px;
+            border-radius: 30px;
+            font-size: 0.82rem;
+            font-weight: 700;
+            color: #fff;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .event-badge.cat-حفلات,
+        .event-badge[data-cat="الحفلات"] {
+            background: var(--primary);
+        }
+
+        .event-badge[data-cat="الفعاليات"] {
+            background: var(--secondary-blue);
+        }
+
+        .event-badge[data-cat="المبادرات"] {
+            background: var(--secondary-green);
+        }
+
+        .event-body {
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+
+        .event-date {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .event-title {
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: var(--text-dark);
+            margin-bottom: 10px;
+            line-height: 1.4;
+        }
+
+        .event-desc {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            margin-bottom: 18px;
+            flex: 1;
+        }
+
+        .event-footer {
+            padding-top: 14px;
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-weight: 700;
+            font-size: 0.9rem;
+            color: var(--primary);
+        }
+
+        .event-footer i {
+            transition: transform 0.3s ease;
+        }
+
+        .event-card:hover .event-footer i {
+            transform: translateX(-5px);
+        }
+
+        /* ==========================================================================
+           6. قسم مكتبة الفيديو (Video Gallery - تصميم سينمائي)
+           ========================================================================== */
+        .videos-section {
+            padding: 95px 0;
+            background: var(--bg-soft);
+            position: relative;
+        }
+
+        .videos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 30px;
+        }
+
+        .video-card {
+            background: #0F172A;
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            cursor: pointer;
+            transition: var(--transition);
+            position: relative;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .video-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 22px 44px rgba(14, 149, 142, 0.25);
+            border-color: var(--primary);
+        }
+
+        .video-thumb-wrap {
+            position: relative;
+            height: 220px;
+            overflow: hidden;
+        }
+
+        .video-thumb-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.85;
+            transition: transform 0.5s ease, opacity 0.4s ease;
+        }
+
+        .video-card:hover .video-thumb-wrap img {
+            transform: scale(1.08);
+            opacity: 1;
+        }
+
+        .video-play-overlay {
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle, rgba(14, 149, 142, 0.25) 0%, rgba(15, 23, 42, 0.65) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .play-btn-circle {
+            width: 68px;
+            height: 68px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--secondary-blue));
+            color: #fff;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 0 8px rgba(255, 255, 255, 0.2);
+            transition: var(--transition);
+        }
+
+        .video-card:hover .play-btn-circle {
+            transform: scale(1.12);
+            background: linear-gradient(135deg, var(--secondary-green), var(--primary));
+            box-shadow: 0 0 0 12px rgba(14, 149, 142, 0.35);
+        }
+
+        .video-type-tag {
+            position: absolute;
+            top: 14px;
+            left: 14px;
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(6px);
+            color: #fff;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.78rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .video-type-tag i.fa-youtube {
+            color: #FF0000;
+        }
+
+        .video-type-tag i.fa-film {
+            color: var(--accent-lime);
+        }
+
+        .video-info {
+            padding: 20px 22px;
+            color: #fff;
+        }
+
+        .video-info h3 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            margin-bottom: 6px;
+            line-height: 1.4;
+        }
+
+        .video-info p {
+            font-size: 0.86rem;
+            color: #94A3B8;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* ==========================================================================
+           7. قسم الإنجازات والتكريمات
+           ========================================================================== */
+        .achievements-section {
+            padding: 95px 0;
+            background: var(--bg-white);
+        }
+
+        .achievements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 28px;
+        }
+
+        .achievement-card {
+            background: var(--bg-white);
+            border-radius: var(--radius-md);
+            padding: 28px;
+            border: 1px solid var(--border-color);
+            box-shadow: var(--shadow-sm);
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            position: relative;
+            overflow: hidden;
+            transition: var(--transition);
+        }
+
+        .achievement-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 5px;
+            height: 100%;
+            background: linear-gradient(180deg, var(--primary), var(--secondary-green));
+        }
+
+        .achievement-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-md);
+            border-color: rgba(14, 149, 142, 0.3);
+        }
+
+        .achievement-icon {
+            width: 64px;
+            height: 64px;
+            border-radius: 18px;
+            background: linear-gradient(135deg, rgba(14, 149, 142, 0.12), rgba(77, 177, 73, 0.15));
+            color: var(--primary);
+            font-size: 1.75rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .achievement-content {
+            flex: 1;
+        }
+
+        .achievement-year {
+            display: inline-block;
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--secondary-blue);
+            background: rgba(39, 153, 214, 0.1);
+            padding: 2px 12px;
+            border-radius: 20px;
+            margin-bottom: 8px;
+        }
+
+        .achievement-title {
+            font-size: 1.18rem;
+            font-weight: 800;
+            color: var(--text-dark);
+            margin-bottom: 8px;
+        }
+
+        .achievement-desc {
+            font-size: 0.94rem;
+            color: var(--text-muted);
+        }
+
+        /* ==========================================================================
+           8. تذييل الصفحة (Footer)
+           ========================================================================== */
+        .footer {
+            background: #0F172A;
+            color: #F8FAFC;
+            padding: 75px 0 28px;
+            position: relative;
+            border-top: 5px solid var(--primary);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.4fr 0.8fr 1fr;
+            gap: 48px;
+            padding-bottom: 50px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-brand {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 18px;
+        }
+
+        .footer-brand img {
+            width: 58px;
+            height: 58px;
+            object-fit: contain;
+            background: #fff;
+            padding: 5px;
+            border-radius: 14px;
+        }
+
+        .footer-brand h3 {
+            font-size: 1.15rem;
+            font-weight: 800;
+            color: #fff;
+        }
+
+        .footer-brand span {
+            font-size: 0.85rem;
+            color: var(--accent-lime);
+            font-weight: 700;
+        }
+
+        .footer-about p {
+            color: #94A3B8;
+            font-size: 0.95rem;
+            max-width: 420px;
+            margin-bottom: 20px;
+        }
+
+        .footer-col h4 {
+            font-size: 1.1rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            color: #fff;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-col h4::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 45px;
+            height: 3px;
+            background: var(--primary);
+            border-radius: 3px;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: #94A3B8;
+            font-size: 0.95rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-lime);
+            transform: translateX(-4px);
+        }
+
+        .contact-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            color: #94A3B8;
+            font-size: 0.95rem;
+            margin-bottom: 14px;
+        }
+
+        .contact-list i {
+            color: var(--primary);
+            margin-top: 5px;
+            font-size: 1.05rem;
+        }
+
+        .footer-bottom {
+            padding-top: 26px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 14px;
+            color: #64748B;
+            font-size: 0.9rem;
+        }
+
+        /* ==========================================================================
+           9. النوافذ المنبثقة (Modals: تفاصيل الحفل + مشغل الفيديو + لوحة الأدمن)
+           ========================================================================== */
+        .modal-backdrop {
+            position: fixed;
+            inset: 0;
+            background: rgba(15, 23, 42, 0.72);
+            backdrop-filter: blur(6px);
+            z-index: 2000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+        }
+
+        .modal-backdrop.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal-box {
+            background: var(--bg-white);
+            border-radius: var(--radius-lg);
+            width: 100%;
+            max-width: 720px;
+            max-height: 90vh;
+            overflow-y: auto;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+            transform: translateY(25px) scale(0.97);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .modal-backdrop.active .modal-box {
+            transform: translateY(0) scale(1);
+        }
+
+        .modal-close-btn {
+            position: absolute;
+            top: 18px;
+            left: 18px;
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            background: rgba(15, 23, 42, 0.75);
+            color: #fff;
+            font-size: 1.1rem;
+            cursor: pointer;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .modal-close-btn:hover {
+            background: var(--danger);
+            transform: rotate(90deg);
+        }
+
+        /* تفاصيل الفعالية */
+        .event-modal-img {
+            width: 100%;
+            max-height: 380px;
+            object-fit: cover;
+        }
+
+        .event-modal-content {
+            padding: 30px;
+        }
+
+        .event-modal-meta {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 14px;
+        }
+
+        .event-modal-title {
+            font-size: 1.65rem;
+            font-weight: 800;
+            color: var(--text-dark);
+            margin-bottom: 16px;
+        }
+
+        .event-modal-desc {
+            font-size: 1.05rem;
+            color: var(--text-muted);
+            line-height: 1.85;
+            white-space: pre-line;
+        }
+
+        /* نافذة الفيديو السينمائية (Lightbox) */
+        .video-modal-box {
+            max-width: 900px;
+            background: #000;
+            overflow: hidden;
+        }
+
+        .video-player-container {
+            position: relative;
+            width: 100%;
+            padding-top: 56.25%; /* 16:9 Aspect Ratio */
+            background: #000;
+        }
+
+        .video-player-container iframe,
+        .video-player-container video {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .video-modal-caption {
+            padding: 18px 24px;
+            background: #0F172A;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        /* ==========================================================================
+           10. نافذة تسجيل الدخول ولوحة تحكم الأدمن (Admin Panel)
+           ========================================================================== */
+        .login-modal-box {
+            max-width: 440px;
+            padding: 36px 30px;
+            text-align: center;
+        }
+
+        .login-icon {
+            width: 72px;
+            height: 72px;
+            border-radius: 20px;
+            background: var(--primary-light);
+            color: var(--primary);
+            font-size: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 18px;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+            text-align: right;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 700;
+            font-size: 0.92rem;
+            color: var(--text-dark);
+            margin-bottom: 8px;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 16px;
+            border-radius: 12px;
+            border: 1.5px solid var(--border-color);
+            background: var(--bg-soft);
+            color: var(--text-dark);
+            font-size: 0.96rem;
+            transition: var(--transition);
+        }
+
+        .form-control:focus {
+            border-color: var(--primary);
+            background: #fff;
+            box-shadow: 0 0 0 4px rgba(14, 149, 142, 0.12);
+        }
+
+        /* لوحة تحكم الأدمن الكاملة */
+        .admin-modal-box {
+            max-width: 1080px;
+            max-height: 92vh;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .admin-header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary-blue));
+            color: #fff;
+            padding: 22px 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 14px;
+        }
+
+        .admin-header-title {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .admin-header-title i {
+            font-size: 1.6rem;
+        }
+
+        .admin-header-title h2 {
+            font-size: 1.35rem;
+            font-weight: 800;
+        }
+
+        .admin-header-actions {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-sm {
+            padding: 8px 16px;
+            border-radius: 10px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: var(--transition);
+        }
+
+        .btn-white {
+            background: rgba(255, 255, 255, 0.2);
+            color: #fff;
+            border: 1px solid rgba(255, 255, 255, 0.35);
+        }
+
+        .btn-white:hover {
+            background: #fff;
+            color: var(--primary);
+        }
+
+        .admin-tabs {
+            display: flex;
+            background: var(--bg-soft);
+            border-bottom: 1px solid var(--border-color);
+            padding: 0 24px;
+            gap: 8px;
+            overflow-x: auto;
+        }
+
+        .admin-tab-btn {
+            padding: 15px 22px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            background: transparent;
+            cursor: pointer;
+            border-bottom: 3px solid transparent;
+            white-space: nowrap;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: var(--transition);
+        }
+
+        .admin-tab-btn.active {
+            color: var(--primary);
+            border-bottom-color: var(--primary);
+            background: #fff;
+        }
+
+        .admin-body {
+            padding: 28px;
+            overflow-y: auto;
+            flex: 1;
+        }
+
+        .admin-tab-pane {
+            display: none;
+        }
+
+        .admin-tab-pane.active {
+            display: block;
+        }
+
+        .admin-grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1.25fr;
+            gap: 28px;
+            align-items: start;
+        }
+
+        .admin-card {
+            background: var(--bg-soft);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 22px;
+        }
+
+        .admin-card h3 {
+            font-size: 1.12rem;
+            font-weight: 800;
+            margin-bottom: 18px;
+            color: var(--text-dark);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .admin-card h3 i {
+            color: var(--primary);
+        }
+
+        .image-preview-box {
+            margin-top: 10px;
+            height: 140px;
+            border-radius: 12px;
+            border: 2px dashed var(--border-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background: #fff;
+            color: var(--text-muted);
+            font-size: 0.88rem;
+        }
+
+        .image-preview-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .admin-items-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            max-height: 460px;
+            overflow-y: auto;
+            padding-left: 4px;
+        }
+
+        .admin-item-row {
+            background: #fff;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 12px 14px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+        }
+
+        .admin-item-info {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex: 1;
+            min-width: 0;
+        }
+
+        .admin-item-info img {
+            width: 54px;
+            height: 54px;
+            border-radius: 10px;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+
+        .admin-item-text h4 {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 260px;
+        }
+
+        .admin-item-text span {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        .admin-item-actions {
+            display: flex;
+            gap: 6px;
+        }
+
+        .btn-icon {
+            width: 34px;
+            height: 34px;
+            border-radius: 8px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 0.88rem;
+            transition: var(--transition);
+        }
+
+        .btn-edit {
+            background: rgba(245, 158, 11, 0.14);
+            color: var(--warning);
+        }
+
+        .btn-edit:hover {
+            background: var(--warning);
+            color: #fff;
+        }
+
+        .btn-delete {
+            background: rgba(239, 68, 68, 0.14);
+            color: var(--danger);
+        }
+
+        .btn-delete:hover {
+            background: var(--danger);
+            color: #fff;
+        }
+
+        .backup-box {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+            margin-top: 16px;
+        }
+
+        /* إشعار عائم (Toast Notification) */
+        .toast-notification {
+            position: fixed;
+            bottom: 28px;
+            left: 28px;
+            background: #0F172A;
+            color: #fff;
+            padding: 14px 24px;
+            border-radius: 14px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            z-index: 3000;
+            font-weight: 700;
+            font-size: 0.95rem;
+            border-right: 5px solid var(--secondary-green);
+            transform: translateY(100px);
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .toast-notification.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        /* ==========================================================================
+           11. التجاوب مع جميع الشاشات (Responsive Design)
+           ========================================================================== */
+        @media (max-width: 1024px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .hero-desc {
+                margin: 0 auto 30px;
+            }
+            .hero-btns {
+                justify-content: center;
+            }
+            .stats-bar {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .admin-grid-2 {
+                grid-template-columns: 1fr;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            .menu-toggle {
+                display: inline-flex;
+            }
+            .hero {
+                padding: 125px 0 65px;
+            }
+            .hero-title {
+                font-size: 2rem;
+            }
+            .stats-bar {
+                grid-template-columns: 1fr;
+                padding: 22px;
+            }
+            .section-title {
+                font-size: 1.75rem;
+            }
+            .events-grid,
+            .videos-grid,
+            .achievements-grid {
+                grid-template-columns: 1fr;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+            .brand-text h1 {
+                font-size: 0.92rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ==========================================================================
+         1. الشريط العلوي (Navbar)
+         ========================================================================== -->
+    <header class="navbar">
+        <div class="container">
+            <a href="#home" class="brand">
+                <div class="brand-logo-wrap">
+                    <!-- ملاحظة: ضع ملف شعار المدرسة باسم logo.png في نفس مجلد هذا الملف -->
+                    <img src="logo.png" alt="شعار مدرسة الشيخ سعود بن صقر الخيرية" onerror="this.onerror=null; this.src=window.DEFAULT_SCHOOL_LOGO;">
+                </div>
+                <div class="brand-text">
+                    <h1>مدرسة الشيخ سعود بن صقر الخيرية الخاصة</h1>
+                    <span>فرع 2 - للبنين والبنات</span>
+                </div>
+            </a>
+
+            <nav class="nav-links">
+                <a href="#home" class="active">الرئيسية</a>
+                <a href="#events">الحفلات والفعاليات</a>
+                <a href="#videos">مكتبة الفيديو</a>
+                <a href="#achievements">الإنجازات والتكريمات</a>
+                <a href="#contact">تواصل معنا</a>
+            </nav>
+
+            <div class="nav-actions">
+                <button class="btn-admin" id="openAdminBtn" onclick="handleAdminButtonClick()">
+                    <span class="status-dot"></span>
+                    <i class="fa-solid fa-sliders"></i>
+                    <span>لوحة الإدارة</span>
+                </button>
+                <button class="menu-toggle" onclick="toggleMobileDrawer()" aria-label="القائمة">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- القائمة الجانبية للجوال -->
+    <div class="mobile-drawer-overlay" id="drawerOverlay" onclick="toggleMobileDrawer()"></div>
+    <aside class="mobile-drawer" id="mobileDrawer">
+        <div>
+            <div class="drawer-header">
+                <div class="brand">
+                    <div class="brand-logo-wrap" style="width:44px;height:44px;">
+                        <img src="logo.png" alt="شعار المدرسة" onerror="this.onerror=null; this.src=window.DEFAULT_SCHOOL_LOGO;">
+                    </div>
+                    <div class="brand-text">
+                        <h1 style="font-size:0.9rem;">مدرسة الشيخ سعود بن صقر</h1>
+                        <span>فرع 2</span>
+                    </div>
+                </div>
+                <button class="drawer-close" onclick="toggleMobileDrawer()">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <div class="drawer-links">
+                <a href="#home" onclick="toggleMobileDrawer()"><i class="fa-solid fa-house"></i> الرئيسية</a>
+                <a href="#events" onclick="toggleMobileDrawer()"><i class="fa-solid fa-calendar-star"></i> الحفلات والفعاليات</a>
+                <a href="#videos" onclick="toggleMobileDrawer()"><i class="fa-solid fa-circle-play"></i> مكتبة الفيديو</a>
+                <a href="#achievements" onclick="toggleMobileDrawer()"><i class="fa-solid fa-trophy"></i> الإنجازات والتكريمات</a>
+                <a href="#contact" onclick="toggleMobileDrawer()"><i class="fa-solid fa-phone"></i> تواصل معنا</a>
+            </div>
+        </div>
+        <button class="btn-primary" style="width:100%;justify-content:center;" onclick="toggleMobileDrawer(); handleAdminButtonClick();">
+            <i class="fa-solid fa-lock"></i> دخول لوحة الإدارة
+        </button>
+    </aside>
+
+    <!-- ==========================================================================
+         2. القسم الترحيبي (Hero Section)
+         ========================================================================== -->
+    <section class="hero" id="home">
+        <div class="hero-decor d1"></div>
+        <div class="hero-decor d2"></div>
+
+        <div class="container">
+            <div class="hero-grid">
+                <div class="hero-content">
+                    <div class="hero-badge">
+                        <i class="fa-solid fa-sparkles"></i>
+                        <span>المنصة الرسمية لتوثيق الأنشطة والفعاليات المدرسية</span>
+                    </div>
+                    <h2 class="hero-title">
+                        مدرسة الشيخ سعود بن صقر الخيرية الخاصة
+                        <span class="highlight">فرع 2</span>
+                    </h2>
+                    <p class="hero-desc">
+                        نرحب بكم في البوابة الرقمية لتوثيق حفلات المدرسة، الفعاليات الوطنية والتربوية، المبادرات المجتمعية، وإنجازات طلابنا المتميزين في بيئة تعليمية ملهمة تجمع بين الأصالة والابتكار.
+                    </p>
+                    <div class="hero-btns">
+                        <a href="#events" class="btn-primary">
+                            <i class="fa-solid fa-calendar-check"></i>
+                            <span>استكشف الفعاليات</span>
+                        </a>
+                        <a href="#videos" class="btn-outline">
+                            <i class="fa-solid fa-play"></i>
+                            <span>مكتبة الفيديو</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="hero-showcase">
+                    <div class="showcase-card">
+                        <div class="showcase-banner">
+                            <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1000&q=80" alt="حفلات وفعاليات المدرسة">
+                            <div class="showcase-overlay">
+                                <span>بيئة تربوية رائدة</span>
+                                <h3>نصنع الذكريات ونوثق مسيرة التفوق والتميز</h3>
+                            </div>
+                        </div>
+                        <div class="showcase-footer">
+                            <div class="showcase-school-Id">
+                                <img src="logo.png" alt="شعار المدرسة" onerror="this.onerror=null; this.src=window.DEFAULT_SCHOOL_LOGO;">
+                                <div>
+                                    <h4>مدرسة الشيخ سعود بن صقر الخيرية - فرع 2</h4>
+                                    <p>رأس الخيمة - دولة الإمارات العربية المتحدة</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- شريط الإحصائيات المتحركة -->
+            <div class="stats-bar" id="statsBar">
+                <!-- يتم تعبئتها ديناميكياً من JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+         3. قسم الحفلات والفعاليات المدرسية
+         ========================================================================== -->
+    <section class="events-section" id="events">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">
+                    <i class="fa-solid fa-camera-retro"></i>
+                    <span>أرشيف الأنشطة المصور</span>
+                </div>
+                <h2 class="section-title">الحفلات <span>والفعاليات المدرسية</span></h2>
+                <p class="section-subtitle">
+                    استعرض أحدث الاحتفالات، الأيام الوطنية، المعارض العلمية، والمبادرات التطوعية التي نظمتها أسرة المدرسة.
+                </p>
+            </div>
+
+            <div class="filter-bar">
+                <button class="filter-btn active" onclick="filterEvents('الكل', this)">الكل</button>
+                <button class="filter-btn" onclick="filterEvents('الحفلات', this)">الحفلات</button>
+                <button class="filter-btn" onclick="filterEvents('الفعاليات', this)">الفعاليات</button>
+                <button class="filter-btn" onclick="filterEvents('المبادرات', this)">المبادرات</button>
+            </div>
+
+            <div class="events-grid" id="eventsGrid">
+                <!-- يتم توليد البطاقات ديناميكياً -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+         4. مكتبة الفيديو (Video Gallery)
+         ========================================================================== -->
+    <section class="videos-section" id="videos">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">
+                    <i class="fa-solid fa-clapperboard"></i>
+                    <span>التوثيق المرئي</span>
+                </div>
+                <h2 class="section-title">مكتبة <span>الفيديو السينمائية</span></h2>
+                <p class="section-subtitle">
+                    شاهد أجمل اللقطات والتغطيات المرئية لحفلات التخرج، الفعاليات المدرسية، وإبداعات الطلاب.
+                </p>
+            </div>
+
+            <div class="videos-grid" id="videosGrid">
+                <!-- يتم توليد الفيديوهات ديناميكياً -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+         5. قسم الإنجازات والتكريمات
+         ========================================================================== -->
+    <section class="achievements-section" id="achievements">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">
+                    <i class="fa-solid fa-medal"></i>
+                    <span>لوحة الشرف والتميز</span>
+                </div>
+                <h2 class="section-title">الإنجازات <span>والتكريمات</span></h2>
+                <p class="section-subtitle">
+                    فخورون بما حققه طلابنا وهيئتنا التدريسية من مراكز متقدمة وجوائز التميز على مستوى الإمارة والدولة.
+                </p>
+            </div>
+
+            <div class="achievements-grid" id="achievementsGrid">
+                <!-- يتم توليد الإنجازات ديناميكياً -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+         6. تذييل الصفحة (Footer)
+         ========================================================================== -->
+    <footer class="footer" id="contact">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <div class="footer-brand">
+                        <img src="logo.png" alt="شعار المدرسة" onerror="this.onerror=null; this.src=window.DEFAULT_SCHOOL_LOGO;">
+                        <div>
+                            <h3>مدرسة الشيخ سعود بن صقر الخيرية الخاصة</h3>
+                            <span>فرع 2 - صرح العلم والقيم</span>
+                        </div>
+                    </div>
+                    <p>
+                        مؤسسة تعليمية خيرية رائدة تسعى إلى تقديم تعليم عصري متكامل، وبناء جيل واعٍ ومبدع متمسك بقيمه الأصيلة، ومسلح بمهارات المستقبل.
+                    </p>
+                </div>
+
+                <div class="footer-col">
+                    <h4>روابط سريعة</h4>
+                    <ul class="footer-links">
+                        <li><a href="#home"><i class="fa-solid fa-angle-left"></i> الصفحة الرئيسية</a></li>
+                        <li><a href="#events"><i class="fa-solid fa-angle-left"></i> الحفلات والفعاليات</a></li>
+                        <li><a href="#videos"><i class="fa-solid fa-angle-left"></i> مكتبة الفيديو</a></li>
+                        <li><a href="#achievements"><i class="fa-solid fa-angle-left"></i> الإنجازات والتكريمات</a></li>
+                        <li><a href="javascript:void(0)" onclick="handleAdminButtonClick()"><i class="fa-solid fa-angle-left"></i> لوحة تحكم الإدارة</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>معلومات التواصل</h4>
+                    <ul class="contact-list">
+                        <li>
+                            <i class="fa-solid fa-location-dot"></i>
+                            <span>رأس الخيمة - دولة الإمارات العربية المتحدة (فرع 2)</span>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-phone-volume"></i>
+                            <span dir="ltr">+971 7 222 0000</span>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-envelope"></i>
+                            <span>branch2@saudschool.ae</span>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-clock"></i>
+                            <span>الأحد - الخميس: 7:15 صباحاً - 2:30 ظهراً</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>© جميع الحقوق محفوظة لـ <strong>مدرسة الشيخ سعود بن صقر الخيرية الخاصة - فرع 2</strong></p>
+                <p>تصميم وتطوير بوابة التوثيق الرقمي للفعاليات</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ==========================================================================
+         7. النافذة المنبثقة لتفاصيل الحفل / الفعالية (Event Details Modal)
+         ========================================================================== -->
+    <div class="modal-backdrop" id="eventDetailModal" onclick="if(event.target===this) closeEventModal()">
+        <div class="modal-box">
+            <button class="modal-close-btn" onclick="closeEventModal()">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <img src="" alt="صورة الفعالية" class="event-modal-img" id="modalEventImg">
+            <div class="event-modal-content">
+                <div class="event-modal-meta">
+                    <span class="event-badge" id="modalEventCat" style="position:static;"></span>
+                    <span class="event-date" id="modalEventDate" style="margin:0;"></span>
+                </div>
+                <h3 class="event-modal-title" id="modalEventTitle"></h3>
+                <p class="event-modal-desc" id="modalEventDesc"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==========================================================================
+         8. النافذة المنبثقة لمشغل الفيديو (Video Lightbox Modal)
+         ========================================================================== -->
+    <div class="modal-backdrop" id="videoLightboxModal" onclick="if(event.target===this) closeVideoModal()">
+        <div class="modal-box video-modal-box">
+            <button class="modal-close-btn" onclick="closeVideoModal()">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div class="video-player-container" id="videoPlayerContainer">
+                <!-- يتم حقن iframe يوتيوب أو video MP4 هنا -->
+            </div>
+            <div class="video-modal-caption">
+                <h4 id="videoModalTitle"></h4>
+                <span id="videoModalBadge" style="font-size:0.85rem;color:#8BC34A;"></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==========================================================================
+         9. نافذة تسجيل دخول الأدمن (Admin Login Modal)
+         ========================================================================== -->
+    <div class="modal-backdrop" id="loginModal" onclick="if(event.target===this) closeLoginModal()">
+        <div class="modal-box login-modal-box">
+            <button class="modal-close-btn" onclick="closeLoginModal()">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div class="login-icon">
+                <i class="fa-solid fa-user-shield"></i>
+            </div>
+            <h3 style="font-size:1.4rem;font-weight:800;margin-bottom:6px;">تسجيل دخول الإدارة</h3>
+            <p style="color:var(--text-muted);font-size:0.92rem;margin-bottom:22px;">
+                أدخل كلمة المرور للوصول إلى لوحة التحكم وإدارة محتوى الموقع
+            </p>
+            <form onsubmit="handleAdminLogin(event)">
+                <div class="form-group">
+                    <label for="adminPasswordInput">كلمة المرور</label>
+                    <input type="password" id="adminPasswordInput" class="form-control" placeholder="أدخل كلمة المرور..." required>
+                </div>
+                <p id="loginErrorMsg" style="color:var(--danger);font-size:0.86rem;font-weight:700;display:none;margin-bottom:12px;">
+                    <i class="fa-solid fa-circle-exclamation"></i> كلمة المرور غير صحيحة! حاول مرة أخرى.
+                </p>
+                <button type="submit" class="btn-primary" style="width:100%;justify-content:center;">
+                    <i class="fa-solid fa-right-to-bracket"></i>
+                    <span>دخول لوحة التحكم</span>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- ==========================================================================
+         10. لوحة تحكم الأدمن المتكاملة (Admin Dashboard Modal)
+         ========================================================================== -->
+    <div class="modal-backdrop" id="adminDashboardModal" onclick="if(event.target===this) closeAdminDashboard()">
+        <div class="modal-box admin-modal-box">
+            <div class="admin-header">
+                <div class="admin-header-title">
+                    <i class="fa-solid fa-gauge-high"></i>
+                    <div>
+                        <h2>لوحة تحكم الموقع - مدرسة الشيخ سعود بن صقر (فرع 2)</h2>
+                        <span style="font-size:0.82rem;opacity:0.9;">جميع التعديلات تُحفظ تلقائياً في المتصفح (LocalStorage)</span>
+                    </div>
+                </div>
+                <div class="admin-header-actions">
+                    <button class="btn-sm btn-white" onclick="logoutAdmin()">
+                        <i class="fa-solid fa-right-from-bracket"></i> تسجيل خروج
+                    </button>
+                    <button class="btn-sm btn-white" onclick="closeAdminDashboard()">
+                        <i class="fa-solid fa-xmark"></i> إغلاق
+                    </button>
+                </div>
+            </div>
+
+            <!-- تبويبات لوحة التحكم -->
+            <div class="admin-tabs">
+                <button class="admin-tab-btn active" onclick="switchAdminTab('tabEvents', this)">
+                    <i class="fa-solid fa-calendar-days"></i> إدارة الفعاليات والحفلات
+                </button>
+                <button class="admin-tab-btn" onclick="switchAdminTab('tabVideos', this)">
+                    <i class="fa-solid fa-video"></i> إدارة الفيديوهات
+                </button>
+                <button class="admin-tab-btn" onclick="switchAdminTab('tabAchievements', this)">
+                    <i class="fa-solid fa-trophy"></i> إدارة الإنجازات
+                </button>
+                <button class="admin-tab-btn" onclick="switchAdminTab('tabStatsBackup', this)">
+                    <i class="fa-solid fa-chart-pie"></i> الإحصائيات والنسخ الاحتياطي
+                </button>
+            </div>
+
+            <div class="admin-body">
+                <!-- التبويب 1: إدارة الفعاليات والحفلات -->
+                <div class="admin-tab-pane active" id="tabEvents">
+                    <div class="admin-grid-2">
+                        <div class="admin-card">
+                            <h3 id="eventFormHeading"><i class="fa-solid fa-plus-circle"></i> إضافة فعالية / حفلة جديدة</h3>
+                            <form id="eventForm" onsubmit="saveEvent(event)">
+                                <input type="hidden" id="eventEditId">
+                                <div class="form-group">
+                                    <label>عنوان الفعالية أو الحفل *</label>
+                                    <input type="text" id="eventTitleInput" class="form-control" placeholder="مثال: حفل تخريج الدفعة السنوية..." required>
+                                </div>
+                                <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+                                    <div class="form-group">
+                                        <label>التصنيف *</label>
+                                        <select id="eventCategoryInput" class="form-control" required>
+                                            <option value="الحفلات">الحفلات</option>
+                                            <option value="الفعاليات">الفعاليات</option>
+                                            <option value="المبادرات">المبادرات</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>التاريخ *</label>
+                                        <input type="date" id="eventDateInput" class="form-control" required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label>وصف الفعالية والتفاصيل *</label>
+                                    <textarea id="eventDescInput" class="form-control" rows="3" placeholder="اكتب تفاصيل الحفل أو الفعالية..." required></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label>رابط الصورة (أو ارفع صورة من جهازك بالأسفل)</label>
+                                    <input type="text" id="eventImageUrlInput" class="form-control" placeholder="https://example.com/image.jpg" oninput="previewEventImageUrl(this.value)">
+                                </div>
+                                <div class="form-group">
+                                    <label>رفع صورة مباشرة من الجهاز (مع معاينة فورية)</label>
+                                    <input type="file" id="eventImageFileInput" class="form-control" accept="image/*" onchange="handleEventImageUpload(event)">
+                                    <div class="image-preview-box" id="eventImagePreview">
+                                        <span>معاينة الصورة ستظهر هنا</span>
+                                    </div>
+                                </div>
+                                <div style="display:flex;gap:10px;">
+                                    <button type="submit" class="btn-primary" style="flex:1;justify-content:center;padding:12px;">
+                                        <i class="fa-solid fa-floppy-disk"></i> حفظ الفعالية
+                                    </button>
+                                    <button type="button" class="btn-outline" id="cancelEventEditBtn" style="display:none;padding:12px 18px;" onclick="resetEventForm()">
+                                        إلغاء
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+
+                        <div class="admin-card">
+                            <h3><i class="fa-solid fa-list-check"></i> الفعاليات الحالية (<span id="adminEventsCount">0</span>)</h3>
+                            <div class="admin-items-list" id="adminEventsList"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- التبويب 2: إدارة الفيديوهات -->
+                <div class="admin-tab-pane" id="tabVideos">
+                    <div class="admin-grid-2">
+                        <div class="admin-card">
+                            <h3 id="videoFormHeading"><i class="fa-solid fa-circle-plus"></i> إضافة فيديو جديد</h3>
+                            <form id="videoForm" onsubmit="saveVideo(event)">
+                                <input type="hidden" id="videoEditId">
+                                <div class="form-group">
+                                    <label>عنوان الفيديو *</label>
+                                    <input type="text" id="videoTitleInput" class="form-control" placeholder="مثال: التغطية الكاملة لحفل اليوم الوطني..." required>
+                                </div>
+                                <div class="form-group">
+                                    <label>رابط يوتيوب (YouTube) أو مسار ملف فيديو (MP4) *</label>
+                                    <input type="text" id="videoUrlInput" class="form-control" placeholder="https://www.youtube.com/watch?v=... أو videos/event.mp4" required oninput="autoDetectVideoThumb(this.value)">
+                                    <small style="color:var(--text-muted);font-size:0.78rem;">يستخرج النظام معرف فيديو يوتيوب والصورة المصغرة تلقائياً عند لصق أي رابط يوتيوب.</small>
+                                </div>
+                                <div class="form-group">
+                                    <label>وصف قصير أو مدة الفيديو</label>
+                                    <input type="text" id="videoSubtitleInput" class="form-control" placeholder="مثال: تغطية خاصة - 04:15 دقيقة">
+                                </div>
+                                <div class="form-group">
+                                    <label>رابط صورة مصغرة (اختياري - تُجلب تلقائياً ليوتيوب)</label>
+                                    <input type="text" id="videoThumbInput" class="form-control" placeholder="https://...">
+                                </div>
+                                <div style="display:flex;gap:10px;">
+                                    <button type="submit" class="btn-primary" style="flex:1;justify-content:center;padding:12px;">
+                                        <i class="fa-solid fa-floppy-disk"></i> حفظ الفيديو
+                                    </button>
+                                    <button type="button" class="btn-outline" id="cancelVideoEditBtn" style="display:none;padding:12px 18px;" onclick="resetVideoForm()">
+                                        إلغاء
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+
+                        <div class="admin-card">
+                            <h3><i class="fa-solid fa-film"></i> الفيديوهات الحالية (<span id="adminVideosCount">0</span>)</h3>
+                            <div class="admin-items-list" id="adminVideosList"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- التبويب 3: إدارة الإنجازات والتكريمات -->
+                <div class="admin-tab-pane" id="tabAchievements">
+                    <div class="admin-grid-2">
+                        <div class="admin-card">
+                            <h3 id="achFormHeading"><i class="fa-solid fa-award"></i> إضافة إنجاز أو تكريم جديد</h3>
+                            <form id="achievementForm" onsubmit="saveAchievement(event)">
+                                <input type="hidden" id="achEditId">
+                                <div class="form-group">
+                                    <label>عنوان الإنجاز / الجائزة *</label>
+                                    <input type="text" id="achTitleInput" class="form-control" placeholder="مثال: المركز الأول في مسابقة الروبوت والذكاء الاصطناعي" required>
+                                </div>
+                                <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+                                    <div class="form-group">
+                                        <label>العام الدراسي / التاريخ *</label>
+                                        <input type="text" id="achYearInput" class="form-control" placeholder="مثال: 2025 - 2026" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>الأيقونة التعبيرية</label>
+                                        <select id="achIconInput" class="form-control">
+                                            <option value="fa-trophy">كأس البطولة (Trophy)</option>
+                                            <option value="fa-medal">ميدالية التميز (Medal)</option>
+                                            <option value="fa-award">درع تكريم (Award)</option>
+                                            <option value="fa-star">نجمة التفوق (Star)</option>
+                                            <option value="fa-lightbulb">الابتكار والعلوم (Innovation)</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label>تفاصيل الإنجاز *</label>
+                                    <textarea id="achDescInput" class="form-control" rows="3" placeholder="اكتب نبذة عن الجائزة والطلاب المشاركين..." required></textarea>
+                                </div>
+                                <div style="display:flex;gap:10px;">
+                                    <button type="submit" class="btn-primary" style="flex:1;justify-content:center;padding:12px;">
+                                        <i class="fa-solid fa-floppy-disk"></i> حفظ الإنجاز
+                                    </button>
+                                    <button type="button" class="btn-outline" id="cancelAchEditBtn" style="display:none;padding:12px 18px;" onclick="resetAchievementForm()">
+                                        إلغاء
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+
+                        <div class="admin-card">
+                            <h3><i class="fa-solid fa-ranking-star"></i> قائمة الإنجازات (<span id="adminAchCount">0</span>)</h3>
+                            <div class="admin-items-list" id="adminAchList"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- التبويب 4: إدارة الإحصائيات والنسخ الاحتياطي -->
+                <div class="admin-tab-pane" id="tabStatsBackup">
+                    <div class="admin-grid-2">
+                        <div class="admin-card">
+                            <h3><i class="fa-solid fa-chart-simple"></i> تعديل أرقام الإحصائيات في الواجهة الرئيسية</h3>
+                            <form onsubmit="saveStatsForm(event)">
+                                <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+                                    <div class="form-group">
+                                        <label>عدد الحفلات المدرسية</label>
+                                        <input type="number" id="statPartiesInput" class="form-control" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>عدد الفعاليات والأنشطة</label>
+                                        <input type="number" id="statEventsInput" class="form-control" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>عدد الجوائز والتكريمات</label>
+                                        <input type="number" id="statAwardsInput" class="form-control" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>عدد المبادرات المجتمعية</label>
+                                        <input type="number" id="statInitiativesInput" class="form-control" required>
+                                    </div>
+                                </div>
+                                <button type="submit" class="btn-primary" style="width:100%;justify-content:center;padding:12px;">
+                                    <i class="fa-solid fa-check-double"></i> تحديث الإحصائيات فوراً
+                                </button>
+                            </form>
+                        </div>
+
+                        <div class="admin-card">
+                            <h3><i class="fa-solid fa-database"></i> النسخ الاحتياطي ونقل البيانات (بدون سيرفر)</h3>
+                            <p style="color:var(--text-muted);font-size:0.92rem;margin-bottom:16px;">
+                                بما أن الموقع يعمل بالكامل بدون سيرفر، يمكنك تصدير كافة الفعاليات والفيديوهات والإنجازات في ملف <strong>JSON</strong> لحفظ نسخة احتياطية أو نقلها لأي جهاز آخر بضغطة زر.
+                            </p>
+                            <div class="backup-box">
+                                <button type="button" class="btn-primary" onclick="exportBackupJSON()">
+                                    <i class="fa-solid fa-download"></i> تصدير البيانات (Backup JSON)
+                                </button>
+
+                                <label class="btn-outline" style="cursor:pointer;">
+                                    <i class="fa-solid fa-upload"></i> استيراد البيانات (Import)
+                                    <input type="file" accept=".json" style="display:none;" onchange="importBackupJSON(event)">
+                                </label>
+
+                                <button type="button" class="btn-sm" style="background:rgba(239,68,68,0.12);color:var(--danger);padding:12px 20px;border-radius:50px;" onclick="resetToDefaultData()">
+                                    <i class="fa-solid fa-rotate-left"></i> استعادة البيانات الافتراضية
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- إشعار الحفظ العائم -->
+    <div class="toast-notification" id="toastBox">
+        <i class="fa-solid fa-circle-check" style="color:var(--accent-lime);font-size:1.3rem;"></i>
+        <span id="toastMessage">تم حفظ التعديلات بنجاح!</span>
+    </div>
+
+    <!-- ==========================================================================
+         الكود البرمجي الكامل (Vanilla JavaScript)
+         ========================================================================== -->
+    <script>
+        /* ==========================================================================
+           1. إعدادات النظام وكلمة مرور الأدمن والشعار البديل
+           ========================================================================== */
+
+        // ---> لتغيير كلمة مرور لوحة التحكم، عدّل القيمة التالية:
+        const ADMIN_PASSWORD = "admin123";
+
+        // مفتاح التخزين المحلي في المتصفح (LocalStorage)
+        const STORAGE_KEY = "SAUD_SCHOOL_BRANCH2_DATA_V1";
+
+        // ---> شعار احتياطي مدمج بصيغة SVG يظهر تلقائياً في حال عدم وضع ملف logo.png بجانب الكود:
+        window.DEFAULT_SCHOOL_LOGO = "data:image/svg+xml;charset=UTF-8," + encodeURIComponent(`
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
+                <defs>
+                    <linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="#0E958E"/>
+                        <stop offset="50%" stop-color="#2799D6"/>
+                        <stop offset="100%" stop-color="#4DB149"/>
+                    </linearGradient>
+                </defs>
+                <circle cx="60" cy="60" r="56" fill="#F8FAFC" stroke="url(#g1)" stroke-width="6"/>
+                <path d="M60 22 L92 38 L60 54 L28 38 Z" fill="#0E958E"/>
+                <path d="M38 46 L38 72 C38 82 82 82 82 72 L82 46 L60 57 Z" fill="#2799D6"/>
+                <path d="M30 86 Q60 72 90 86" fill="none" stroke="#4DB149" stroke-width="6" stroke-linecap="round"/>
+                <circle cx="60" cy="36" r="4" fill="#8BC34A"/>
+            </svg>
+        `);
+
+        /* ==========================================================================
+           2. البيانات الافتراضية للموقع (تظهر عند التشغيل الأول أو عند الاستعادة)
+              يمكنك تعديل النصوص أو الصور الافتراضية هنا مباشرة
+           ========================================================================== */
+        const DEFAULT_SITE_DATA = {
+            stats: {
+                parties: 45,
+                events: 120,
+                awards: 68,
+                initiatives: 54
+            },
+            events: [
+                {
+                    id: "ev-1",
+                    title: "حفل تخريج كوكبة التميز والإبداع - فرع 2",
+                    category: "الحفلات",
+                    date: "2026-05-18",
+                    image: "https://images.unsplash.com/photo-1523580494863-6f3031224c94?auto=format&fit=crop&w=900&q=80",
+                    description: "نظمت مدرسة الشيخ سعود بن صقر الخيرية الخاصة - فرع 2 حفلاً بهيجاً لتخريج دفعة جديدة من طلابها وطالباتها المتفوقين، بحضور أولياء الأمور والهيئة الإدارية والتدريسية. تضمن الحفل مسيرة الخريجين، وكلمات ملهمة، وتوزيع دروع التفوق والشهادات التقديرية وسط أجواء من الفخر والاعتزاز."
+                },
+                {
+                    id: "ev-2",
+                    title: "احتفالية عيد الاتحاد والهوية الوطنية الإماراتية",
+                    category: "الحفلات",
+                    date: "2025-12-02",
+                    image: "https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=900&q=80",
+                    description: "توشحت ساحات المدرسة بألوان علم دولة الإمارات العربية المتحدة في احتفالية وطنية كبرى، قدم خلالها الطلاب لوحات شعبية وتراثية، وأوبريت في حب الوطن، بالإضافة إلى أركان التراث الإماراتي الأصيل التي عكست روح الانتماء والولاء للقيادة الرشيدة."
+                },
+                {
+                    id: "ev-3",
+                    title: "معرض الابتكار والعلوم والذكاء الاصطناعي",
+                    category: "الفعاليات",
+                    date: "2026-02-14",
+                    image: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=900&q=80",
+                    description: "أطلقت المدرسة معرض الابتكار العلمي بمشاركة مشاريع طلابية مبتكرة في مجالات الطاقة المتجددة، البرمجة، والروبوتات التعليمية، حيث استعرض الطلاب ابتكاراتهم أمام لجنة التحكيم والزوار."
+                },
+                {
+                    id: "ev-4",
+                    title: "مبادرة سقيا الأمل والعمل التطوعي المجتمعي",
+                    category: "المبادرات",
+                    date: "2026-03-10",
+                    image: "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=900&q=80",
+                    description: "انطلاقاً من القيم الخيرية والإنسانية التي تحملها المدرسة، نفذ فريق التطوع الطلابي مبادرة مجتمعية لتوزيع الهدايا والمساعدات وترسيخ ثقافة العطاء والتكافل الاجتماعي في نفوس النشء."
+                },
+                {
+                    id: "ev-5",
+                    title: "المهرجان الرياضي السنوي وبطولة كأس المدرسة",
+                    category: "الفعاليات",
+                    date: "2026-01-22",
+                    image: "https://images.unsplash.com/photo-1526676037777-05a232554f77?auto=format&fit=crop&w=900&q=80",
+                    description: "يوم رياضي حافل بالحماس والمنافسة الشريفة تضمن مسابقات الجري، كرة القدم، والألعاب الحركية الجماعية لتعزيز اللياقة البدنية والروح الرياضية بين طلاب الفرع الثاني."
+                },
+                {
+                    id: "ev-6",
+                    title: "مبادرة مدرستي خضراء للاستدامة البيئية",
+                    category: "المبادرات",
+                    date: "2026-04-05",
+                    image: "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=900&q=80",
+                    description: "مبادرة بيئية شارك فيها الطلاب بزراعة الشتلات في الحديقة المدرسية وتدوير المواد البلاستيكية والورقية لنشر الوعي البيئي والاستدامة."
+                }
+            ],
+            videos: [
+                {
+                    id: "vid-1",
+                    title: "فيلم وثائقي: مسيرة العطاء والتميز في مدرسة الشيخ سعود بن صقر - فرع 2",
+                    url: "https://www.youtube.com/watch?v=ScMzIvxBSi4",
+                    subtitle: "تغطية رسمية • جودة عالية HD",
+                    thumb: "https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=900&q=80"
+                },
+                {
+                    id: "vid-2",
+                    title: "ملخص حفل التخرج السنوي وتكريم أوائل الطلبة",
+                    url: "https://www.youtube.com/watch?v=aqz-KE-bpKQ",
+                    subtitle: "حفل التخرج • 05:30 دقيقة",
+                    thumb: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=900&q=80"
+                },
+                {
+                    id: "vid-3",
+                    title: "إبداعات الطلاب في أسبوع الابتكار والعلوم الحديث",
+                    url: "https://www.youtube.com/watch?v=jNQXAC9IVRw",
+                    subtitle: "معرض الابتكار • 03:45 دقيقة",
+                    thumb: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=900&q=80"
+                }
+            ],
+            achievements: [
+                {
+                    id: "ach-1",
+                    title: "المركز الأول في مسابقة تحدي القراءة واللغة العربية",
+                    year: "2025 - 2026",
+                    icon: "fa-trophy",
+                    description: "حصد طلاب الفرع الثاني المراكز الأولى في مسابقة القراءة والخطابة على مستوى المدارس المشاركة بتفوق لافت."
+                },
+                {
+                    id: "ach-2",
+                    title: "جائزة المدرسة المتميزة في المبادرات التطوعية والخيرية",
+                    year: "2025 - 2026",
+                    icon: "fa-medal",
+                    description: "تكريم خاص للمدرسة تقديراً لجهودها المستمرة في إطلاق المبادرات الإنسانية والمجتمعية وترسيخ العمل التطوعي."
+                },
+                {
+                    id: "ach-3",
+                    title: "درع الابتكار العلمي ومشاريع الروبوت المدرسي",
+                    year: "2024 - 2025",
+                    icon: "fa-lightbulb",
+                    description: "فوز الفريق العلمي بالمدرسة بدرع التميز عن مشروع المدرسة الذكية المستدامة في معرض الابتكار السنوي."
+                },
+                {
+                    id: "ach-4",
+                    title: "تكريم حفظة القرآن الكريم في مسابقة الفرقان",
+                    year: "2025 - 2026",
+                    icon: "fa-star",
+                    description: "تأهل وتكريم نخبة من طلاب وطالبات المدرسة في مسابقة حفظ وتجويد القرآن الكريم."
+                }
+            ]
+        };
+
+        /* ==========================================================================
+           3. إدارة الحالة والبيانات (State Management & LocalStorage)
+           ========================================================================== */
+        let siteData = loadSiteData();
+        let currentEventFilter = "الكل";
+        let isAdminLoggedIn = sessionStorage.getItem("SAUD_ADMIN_SESSION") === "true";
+        let uploadedEventImageBase64 = "";
+
+        function loadSiteData() {
+            try {
+                const raw = localStorage.getItem(STORAGE_KEY);
+                if (!raw) {
+                    localStorage.setItem(STORAGE_KEY, JSON.stringify(DEFAULT_SITE_DATA));
+                    return JSON.parse(JSON.stringify(DEFAULT_SITE_DATA));
+                }
+                return JSON.parse(raw);
+            } catch (e) {
+                return JSON.parse(JSON.stringify(DEFAULT_SITE_DATA));
+            }
+        }
+
+        function saveSiteData(msg = "تم حفظ التعديلات وتحديث الموقع بنجاح!") {
+            try {
+                localStorage.setItem(STORAGE_KEY, JSON.stringify(siteData));
+                renderAllSections();
+                renderAdminLists();
+                showToast(msg);
+            } catch (err) {
+                alert("تنبيه: حجم الصورة المرفوعة كبير جداً على ذاكرة المتصفح. يرجى اختيار صورة أصغر أو استخدام رابط صورة.");
+            }
+        }
+
+        /* ==========================================================================
+           4. عرض محتويات الموقع في الواجهة الأمامية (Rendering UI)
+           ========================================================================== */
+        function renderAllSections() {
+            renderStatsBar();
+            renderEventsGrid();
+            renderVideosGrid();
+            renderAchievementsGrid();
+            updateAdminButtonState();
+        }
+
+        // 4.1 عرض شريط الإحصائيات المتحركة
+        function renderStatsBar() {
+            const s = siteData.stats || DEFAULT_SITE_DATA.stats;
+            const statsBar = document.getElementById("statsBar");
+            const items = [
+                { icon: "fa-wand-magic-sparkles", count: s.parties, label: "حفلة مدرسية موثقة" },
+                { icon: "fa-calendar-check", count: s.events, label: "فعالية ونشاط طلابي" },
+                { icon: "fa-trophy", count: s.awards, label: "جائزة وتكريم متميز" },
+                { icon: "fa-hand-holding-heart", count: s.initiatives, label: "مبادرة خيرية ومجتمعية" }
+            ];
+
+            statsBar.innerHTML = items.map(item => `
+                <div class="stat-item">
+                    <div class="stat-icon">
+                        <i class="fa-solid ${item.icon}"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>+<span class="stat-counter" data-target="${item.count}">0</span></h3>
+                        <p>${item.label}</p>
+                    </div>
+                </div>
+            `).join("");
+
+            animateCounters();
+        }
+
+        function animateCounters() {
+            const counters = document.querySelectorAll(".stat-counter");
+            counters.forEach(counter => {
+                const target = +counter.getAttribute("data-target");
+                const duration = 1200;
+                const stepTime = 20;
+                const steps = duration / stepTime;
+                const increment = target / steps;
+                let current = 0;
+
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= target) {
+                        counter.textContent = target;
+                        clearInterval(timer);
+                    } else {
+                        counter.textContent = Math.ceil(current);
+                    }
+                }, stepTime);
+            });
+        }
+
+        // 4.2 عرض بطاقات الحفلات والفعاليات
+        function renderEventsGrid() {
+            const grid = document.getElementById("eventsGrid");
+            const list = siteData.events.filter(ev =>
+                currentEventFilter === "الكل" ? true : ev.category === currentEventFilter
+            );
+
+            if (list.length === 0) {
+                grid.innerHTML = `
+                    <div style="grid-column: 1 / -1; text-align:center; padding:50px; background:var(--bg-soft); border-radius:16px; color:var(--text-muted);">
+                        <i class="fa-regular fa-folder-open" style="font-size:2.5rem; color:var(--primary); margin-bottom:12px;"></i>
+                        <p style="font-weight:700;">لا توجد فعاليات مضافة في هذا التصنيف حالياً.</p>
+                    </div>
+                `;
+                return;
+            }
+
+            grid.innerHTML = list.map(ev => `
+                <article class="event-card" onclick="openEventModal('${ev.id}')">
+                    <div class="event-thumb">
+                        <img src="${escapeHtml(ev.image)}" alt="${escapeHtml(ev.title)}" onerror="this.src='https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=800&q=80'">
+                        <span class="event-badge" data-cat="${escapeHtml(ev.category)}">${escapeHtml(ev.category)}</span>
+                    </div>
+                    <div class="event-body">
+                        <div class="event-date">
+                            <i class="fa-regular fa-calendar"></i>
+                            <span>${formatArabicDate(ev.date)}</span>
+                        </div>
+                        <h3 class="event-title">${escapeHtml(ev.title)}</h3>
+                        <p class="event-desc">${escapeHtml(ev.description)}</p>
+                        <div class="event-footer">
+                            <span>عرض التفاصيل والصورة</span>
+                            <i class="fa-solid fa-arrow-left"></i>
+                        </div>
+                    </div>
+                </article>
+            `).join("");
+        }
+
+        function filterEvents(category, btnEl) {
+            currentEventFilter = category;
+            document.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active"));
+            if (btnEl) btnEl.classList.add("active");
+            renderEventsGrid();
+        }
+
+        // 4.3 عرض مكتبة الفيديو
+        function renderVideosGrid() {
+            const grid = document.getElementById("videosGrid");
+            const list = siteData.videos || [];
+
+            if (list.length === 0) {
+                grid.innerHTML = `<p style="grid-column:1/-1;text-align:center;color:var(--text-muted);">لا توجد فيديوهات مضافة حالياً.</p>`;
+                return;
+            }
+
+            grid.innerHTML = list.map(vid => {
+                const ytId = extractYouTubeId(vid.url);
+                const thumbUrl = vid.thumb || (ytId ? `https://img.youtube.com/vi/${ytId}/hqdefault.jpg` : "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=800&q=80");
+                const isYouTube = Boolean(ytId);
+
+                return `
+                    <div class="video-card" onclick="openVideoModal('${vid.id}')">
+                        <div class="video-thumb-wrap">
+                            <img src="${escapeHtml(thumbUrl)}" alt="${escapeHtml(vid.title)}" onerror="this.src='https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=800&q=80'">
+                            <div class="video-play-overlay">
+                                <div class="play-btn-circle">
+                                    <i class="fa-solid fa-play"></i>
+                                </div>
+                            </div>
+                            <span class="video-type-tag">
+                                <i class="fa-brands ${isYouTube ? 'fa-youtube' : 'fa-solid fa-film'}"></i>
+                                ${isYouTube ? 'YouTube' : 'MP4 فيديو'}
+                            </span>
+                        </div>
+                        <div class="video-info">
+                            <h3>${escapeHtml(vid.title)}</h3>
+                            <p><i class="fa-regular fa-clock"></i> ${escapeHtml(vid.subtitle || 'تغطية مرئية خاصة')}</p>
+                        </div>
+                    </div>
+                `;
+            }).join("");
+        }
+
+        // 4.4 عرض الإنجازات والتكريمات
+        function renderAchievementsGrid() {
+            const grid = document.getElementById("achievementsGrid");
+            const list = siteData.achievements || [];
+
+            grid.innerHTML = list.map(ach => `
+                <div class="achievement-card">
+                    <div class="achievement-icon">
+                        <i class="fa-solid ${escapeHtml(ach.icon || 'fa-trophy')}"></i>
+                    </div>
+                    <div class="achievement-content">
+                        <span class="achievement-year">${escapeHtml(ach.year)}</span>
+                        <h3 class="achievement-title">${escapeHtml(ach.title)}</h3>
+                        <p class="achievement-desc">${escapeHtml(ach.description)}</p>
+                    </div>
+                </div>
+            `).join("");
+        }
+
+        /* ==========================================================================
+           5. النوافذ المنبثقة (تفاعل المستخدم مع البطاقات والفيديو)
+           ========================================================================== */
+        function openEventModal(id) {
+            const ev = siteData.events.find(item => item.id === id);
+            if (!ev) return;
+
+            document.getElementById("modalEventImg").src = ev.image;
+            const catEl = document.getElementById("modalEventCat");
+            catEl.textContent = ev.category;
+            catEl.setAttribute("data-cat", ev.category);
+            document.getElementById("modalEventDate").innerHTML = `<i class="fa-regular fa-calendar"></i> ${formatArabicDate(ev.date)}`;
+            document.getElementById("modalEventTitle").textContent = ev.title;
+            document.getElementById("modalEventDesc").textContent = ev.description;
+
+            document.getElementById("eventDetailModal").classList.add("active");
+        }
+
+        function closeEventModal() {
+            document.getElementById("eventDetailModal").classList.remove("active");
+        }
+
+        // استخراج معرف فيديو يوتيوب من أي صيغة رابط يوتيوب
+        function extractYouTubeId(url) {
+            if (!url) return null;
+            const regExp = /(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?|shorts)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/\s]{11})/i;
+            const match = url.match(regExp);
+            return match ? match[1] : null;
+        }
+
+        function openVideoModal(id) {
+            const vid = siteData.videos.find(item => item.id === id);
+            if (!vid) return;
+
+            const container = document.getElementById("videoPlayerContainer");
+            const ytId = extractYouTubeId(vid.url);
+
+            if (ytId) {
+                container.innerHTML = `
+                    <iframe src="https://www.youtube.com/embed/${ytId}?autoplay=1&rel=0"
+                            title="${escapeHtml(vid.title)}"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                `;
+            } else {
+                container.innerHTML = `
+                    <video controls autoplay>
+                        <source src="${escapeHtml(vid.url)}" type="video/mp4">
+                        متصفحك لا يدعم تشغيل الفيديو المباشر.
+                    </video>
+                `;
+            }
+
+            document.getElementById("videoModalTitle").textContent = vid.title;
+            document.getElementById("videoModalBadge").textContent = vid.subtitle || "";
+            document.getElementById("videoLightboxModal").classList.add("active");
+        }
+
+        function closeVideoModal() {
+            document.getElementById("videoLightboxModal").classList.remove("active");
+            document.getElementById("videoPlayerContainer").innerHTML = "";
+        }
+
+        /* ==========================================================================
+           6. نظام تسجيل الدخول ولوحة تحكم الأدمن (Admin Panel Logic)
+           ========================================================================== */
+        function handleAdminButtonClick() {
+            if (isAdminLoggedIn) {
+                openAdminDashboard();
+            } else {
+                document.getElementById("adminPasswordInput").value = "";
+                document.getElementById("loginErrorMsg").style.display = "none";
+                document.getElementById("loginModal").classList.add("active");
+                setTimeout(() => document.getElementById("adminPasswordInput").focus(), 100);
+            }
+        }
+
+        function closeLoginModal() {
+            document.getElementById("loginModal").classList.remove("active");
+        }
+
+        function handleAdminLogin(e) {
+            e.preventDefault();
+            const pass = document.getElementById("adminPasswordInput").value;
+            if (pass === ADMIN_PASSWORD) {
+                isAdminLoggedIn = true;
+                sessionStorage.setItem("SAUD_ADMIN_SESSION", "true");
+                updateAdminButtonState();
+                closeLoginModal();
+                openAdminDashboard();
+                showToast("مرحباً بك في لوحة تحكم الإدارة!");
+            } else {
+                document.getElementById("loginErrorMsg").style.display = "block";
+            }
+        }
+
+        function logoutAdmin() {
+            isAdminLoggedIn = false;
+            sessionStorage.removeItem("SAUD_ADMIN_SESSION");
+            updateAdminButtonState();
+            closeAdminDashboard();
+            showToast("تم تسجيل الخروج من لوحة الإدارة");
+        }
+
+        function updateAdminButtonState() {
+            const btn = document.getElementById("openAdminBtn");
+            if (isAdminLoggedIn) {
+                btn.classList.add("logged-in");
+            } else {
+                btn.classList.remove("logged-in");
+            }
+        }
+
+        function openAdminDashboard() {
+            renderAdminLists();
+            document.getElementById("adminDashboardModal").classList.add("active");
+        }
+
+        function closeAdminDashboard() {
+            document.getElementById("adminDashboardModal").classList.remove("active");
+        }
+
+        function switchAdminTab(tabId, btnEl) {
+            document.querySelectorAll(".admin-tab-pane").forEach(p => p.classList.remove("active"));
+            document.querySelectorAll(".admin-tab-btn").forEach(b => b.classList.remove("active"));
+            document.getElementById(tabId).classList.add("active");
+            btnEl.classList.add("active");
+        }
+
+        // 6.1 إدارة الفعاليات (إضافة / تعديل / حذف + رفع صورة مع ضغط تلقائي)
+        function handleEventImageUpload(e) {
+            const file = e.target.files[0];
+            if (!file) return;
+
+            const reader = new FileReader();
+            reader.onload = function(evt) {
+                const img = new Image();
+                img.onload = function() {
+                    // ضغط أبعاد الصورة تلقائياً لحفظها بسلاسة في LocalStorage
+                    const canvas = document.createElement("canvas");
+                    const maxW = 900;
+                    const scale = img.width > maxW ? maxW / img.width : 1;
+                    canvas.width = img.width * scale;
+                    canvas.height = img.height * scale;
+                    const ctx = canvas.getContext("2d");
+                    ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+                    uploadedEventImageBase64 = canvas.toDataURL("image/jpeg", 0.82);
+                    document.getElementById("eventImagePreview").innerHTML = `<img src="${uploadedEventImageBase64}" alt="معاينة">`;
+                };
+                img.src = evt.target.result;
+            };
+            reader.readAsDataURL(file);
+        }
+
+        function previewEventImageUrl(url) {
+            if (url.trim()) {
+                uploadedEventImageBase64 = "";
+                document.getElementById("eventImagePreview").innerHTML = `<img src="${escapeHtml(url)}" alt="معاينة" onerror="this.parentElement.innerHTML='<span>الرابط غير صالح للمعاينة</span>'">`;
+            }
+        }
+
+        function saveEvent(e) {
+            e.preventDefault();
+            const editId = document.getElementById("eventEditId").value;
+            const title = document.getElementById("eventTitleInput").value.trim();
+            const category = document.getElementById("eventCategoryInput").value;
+            const date = document.getElementById("eventDateInput").value;
+            const description = document.getElementById("eventDescInput").value.trim();
+            const urlInput = document.getElementById("eventImageUrlInput").value.trim();
+
+            const finalImage = uploadedEventImageBase64 || urlInput || "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=900&q=80";
+
+            if (editId) {
+                const idx = siteData.events.findIndex(item => item.id === editId);
+                if (idx > -1) {
+                    siteData.events[idx] = { id: editId, title, category, date, description, image: finalImage };
+                }
+            } else {
+                siteData.events.unshift({
+                    id: "ev-" + Date.now(),
+                    title,
+                    category,
+                    date,
+                    description,
+                    image: finalImage
+                });
+            }
+
+            resetEventForm();
+            saveSiteData("تم حفظ الفعالية بنجاح!");
+        }
+
+        function editEvent(id) {
+            const ev = siteData.events.find(item => item.id === id);
+            if (!ev) return;
+
+            document.getElementById("eventEditId").value = ev.id;
+            document.getElementById("eventTitleInput").value = ev.title;
+            document.getElementById("eventCategoryInput").value = ev.category;
+            document.getElementById("eventDateInput").value = ev.date;
+            document.getElementById("eventDescInput").value = ev.description;
+            document.getElementById("eventImageUrlInput").value = ev.image.startsWith("data:") ? "" : ev.image;
+            uploadedEventImageBase64 = ev.image.startsWith("data:") ? ev.image : "";
+            document.getElementById("eventImagePreview").innerHTML = `<img src="${escapeHtml(ev.image)}" alt="معاينة">`;
+
+            document.getElementById("eventFormHeading").innerHTML = `<i class="fa-solid fa-pen-to-square"></i> تعديل الفعالية`;
+            document.getElementById("cancelEventEditBtn").style.display = "inline-flex";
+        }
+
+        function deleteEvent(id) {
+            if (!confirm("هل أنت متأكد من حذف هذه الفعالية؟")) return;
+            siteData.events = siteData.events.filter(item => item.id !== id);
+            saveSiteData("تم حذف الفعالية.");
+        }
+
+        function resetEventForm() {
+            document.getElementById("eventForm").reset();
+            document.getElementById("eventEditId").value = "";
+            uploadedEventImageBase64 = "";
+            document.getElementById("eventImagePreview").innerHTML = `<span>معاينة الصورة ستظهر هنا</span>`;
+            document.getElementById("eventFormHeading").innerHTML = `<i class="fa-solid fa-plus-circle"></i> إضافة فعالية / حفلة جديدة`;
+            document.getElementById("cancelEventEditBtn").style.display = "none";
+        }
+
+        // 6.2 إدارة الفيديوهات
+        function autoDetectVideoThumb(url) {
+            const ytId = extractYouTubeId(url);
+            const thumbInput = document.getElementById("videoThumbInput");
+            if (ytId && !thumbInput.value.trim()) {
+                thumbInput.value = `https://img.youtube.com/vi/${ytId}/hqdefault.jpg`;
+            }
+        }
+
+        function saveVideo(e) {
+            e.preventDefault();
+            const editId = document.getElementById("videoEditId").value;
+            const title = document.getElementById("videoTitleInput").value.trim();
+            const url = document.getElementById("videoUrlInput").value.trim();
+            const subtitle = document.getElementById("videoSubtitleInput").value.trim();
+            let thumb = document.getElementById("videoThumbInput").value.trim();
+
+            const ytId = extractYouTubeId(url);
+            if (!thumb && ytId) {
+                thumb = `https://img.youtube.com/vi/${ytId}/hqdefault.jpg`;
+            }
+
+            if (editId) {
+                const idx = siteData.videos.findIndex(v => v.id === editId);
+                if (idx > -1) {
+                    siteData.videos[idx] = { id: editId, title, url, subtitle, thumb };
+                }
+            } else {
+                siteData.videos.unshift({
+                    id: "vid-" + Date.now(),
+                    title,
+                    url,
+                    subtitle: subtitle || "تغطية مرئية",
+                    thumb
+                });
+            }
+
+            resetVideoForm();
+            saveSiteData("تم حفظ الفيديو في المكتبة بنجاح!");
+        }
+
+        function editVideo(id) {
+            const vid = siteData.videos.find(v => v.id === id);
+            if (!vid) return;
+
+            document.getElementById("videoEditId").value = vid.id;
+            document.getElementById("videoTitleInput").value = vid.title;
+            document.getElementById("videoUrlInput").value = vid.url;
+            document.getElementById("videoSubtitleInput").value = vid.subtitle || "";
+            document.getElementById("videoThumbInput").value = vid.thumb || "";
+
+            document.getElementById("videoFormHeading").innerHTML = `<i class="fa-solid fa-pen-to-square"></i> تعديل بيانات الفيديو`;
+            document.getElementById("cancelVideoEditBtn").style.display = "inline-flex";
+        }
+
+        function deleteVideo(id) {
+            if (!confirm("هل أنت متأكد من حذف هذا الفيديو؟")) return;
+            siteData.videos = siteData.videos.filter(v => v.id !== id);
+            saveSiteData("تم حذف الفيديو.");
+        }
+
+        function resetVideoForm() {
+            document.getElementById("videoForm").reset();
+            document.getElementById("videoEditId").value = "";
+            document.getElementById("videoFormHeading").innerHTML = `<i class="fa-solid fa-circle-plus"></i> إضافة فيديو جديد`;
+            document.getElementById("cancelVideoEditBtn").style.display = "none";
+        }
+
+        // 6.3 إدارة الإنجازات
+        function saveAchievement(e) {
+            e.preventDefault();
+            const editId = document.getElementById("achEditId").value;
+            const title = document.getElementById("achTitleInput").value.trim();
+            const year = document.getElementById("achYearInput").value.trim();
+            const icon = document.getElementById("achIconInput").value;
+            const description = document.getElementById("achDescInput").value.trim();
+
+            if (editId) {
+                const idx = siteData.achievements.findIndex(a => a.id === editId);
+                if (idx > -1) {
+                    siteData.achievements[idx] = { id: editId, title, year, icon, description };
+                }
+            } else {
+                siteData.achievements.unshift({
+                    id: "ach-" + Date.now(),
+                    title,
+                    year,
+                    icon,
+                    description
+                });
+            }
+
+            resetAchievementForm();
+            saveSiteData("تم حفظ الإنجاز بنجاح!");
+        }
+
+        function editAchievement(id) {
+            const ach = siteData.achievements.find(a => a.id === id);
+            if (!ach) return;
+
+            document.getElementById("achEditId").value = ach.id;
+            document.getElementById("achTitleInput").value = ach.title;
+            document.getElementById("achYearInput").value = ach.year;
+            document.getElementById("achIconInput").value = ach.icon || "fa-trophy";
+            document.getElementById("achDescInput").value = ach.description;
+
+            document.getElementById("achFormHeading").innerHTML = `<i class="fa-solid fa-pen-to-square"></i> تعديل الإنجاز`;
+            document.getElementById("cancelAchEditBtn").style.display = "inline-flex";
+        }
+
+        function deleteAchievement(id) {
+            if (!confirm("هل أنت متأكد من حذف هذا الإنجاز؟")) return;
+            siteData.achievements = siteData.achievements.filter(a => a.id !== id);
+            saveSiteData("تم حذف الإنجاز.");
+        }
+
+        function resetAchievementForm() {
+            document.getElementById("achievementForm").reset();
+            document.getElementById("achEditId").value = "";
+            document.getElementById("achFormHeading").innerHTML = `<i class="fa-solid fa-award"></i> إضافة إنجاز أو تكريم جديد`;
+            document.getElementById("cancelAchEditBtn").style.display = "none";
+        }
+
+        // 6.4 إدارة الإحصائيات
+        function saveStatsForm(e) {
+            e.preventDefault();
+            siteData.stats = {
+                parties: parseInt(document.getElementById("statPartiesInput").value, 10) || 0,
+                events: parseInt(document.getElementById("statEventsInput").value, 10) || 0,
+                awards: parseInt(document.getElementById("statAwardsInput").value, 10) || 0,
+                initiatives: parseInt(document.getElementById("statInitiativesInput").value, 10) || 0
+            };
+            saveSiteData("تم تحديث أرقام الإحصائيات بنجاح!");
+        }
+
+        // تحديث القوائم داخل لوحة تحكم الأدمن
+        function renderAdminLists() {
+            // قائمة الفعاليات
+            document.getElementById("adminEventsCount").textContent = siteData.events.length;
+            document.getElementById("adminEventsList").innerHTML = siteData.events.map(ev => `
+                <div class="admin-item-row">
+                    <div class="admin-item-info">
+                        <img src="${escapeHtml(ev.image)}" alt="">
+                        <div class="admin-item-text">
+                            <h4>${escapeHtml(ev.title)}</h4>
+                            <span>${escapeHtml(ev.category)} • ${ev.date}</span>
+                        </div>
+                    </div>
+                    <div class="admin-item-actions">
+                        <button class="btn-icon btn-edit" onclick="editEvent('${ev.id}')" title="تعديل"><i class="fa-solid fa-pen"></i></button>
+                        <button class="btn-icon btn-delete" onclick="deleteEvent('${ev.id}')" title="حذف"><i class="fa-solid fa-trash"></i></button>
+                    </div>
+                </div>
+            `).join("");
+
+            // قائمة الفيديوهات
+            document.getElementById("adminVideosCount").textContent = siteData.videos.length;
+            document.getElementById("adminVideosList").innerHTML = siteData.videos.map(vid => {
+                const ytId = extractYouTubeId(vid.url);
+                const thumb = vid.thumb || (ytId ? `https://img.youtube.com/vi/${ytId}/hqdefault.jpg` : "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=300&q=80");
+                return `
+                    <div class="admin-item-row">
+                        <div class="admin-item-info">
+                            <img src="${escapeHtml(thumb)}" alt="">
+                            <div class="admin-item-text">
+                                <h4>${escapeHtml(vid.title)}</h4>
+                                <span>${escapeHtml(vid.subtitle || '')}</span>
+                            </div>
+                        </div>
+                        <div class="admin-item-actions">
+                            <button class="btn-icon btn-edit" onclick="editVideo('${vid.id}')" title="تعديل"><i class="fa-solid fa-pen"></i></button>
+                            <button class="btn-icon btn-delete" onclick="deleteVideo('${vid.id}')" title="حذف"><i class="fa-solid fa-trash"></i></button>
+                        </div>
+                    </div>
+                `;
+            }).join("");
+
+            // قائمة الإنجازات
+            document.getElementById("adminAchCount").textContent = siteData.achievements.length;
+            document.getElementById("adminAchList").innerHTML = siteData.achievements.map(ach => `
+                <div class="admin-item-row">
+                    <div class="admin-item-info">
+                        <div style="width:42px;height:42px;border-radius:10px;background:var(--primary-light);color:var(--primary);display:flex;align-items:center;justify-content:center;">
+                            <i class="fa-solid ${escapeHtml(ach.icon || 'fa-trophy')}"></i>
+                        </div>
+                        <div class="admin-item-text">
+                            <h4>${escapeHtml(ach.title)}</h4>
+                            <span>${escapeHtml(ach.year)}</span>
+                        </div>
+                    </div>
+                    <div class="admin-item-actions">
+                        <button class="btn-icon btn-edit" onclick="editAchievement('${ach.id}')" title="تعديل"><i class="fa-solid fa-pen"></i></button>
+                        <button class="btn-icon btn-delete" onclick="deleteAchievement('${ach.id}')" title="حذف"><i class="fa-solid fa-trash"></i></button>
+                    </div>
+                </div>
+            `).join("");
+
+            // تعبئة حقول الإحصائيات
+            const s = siteData.stats || DEFAULT_SITE_DATA.stats;
+            document.getElementById("statPartiesInput").value = s.parties;
+            document.getElementById("statEventsInput").value = s.events;
+            document.getElementById("statAwardsInput").value = s.awards;
+            document.getElementById("statInitiativesInput").value = s.initiatives;
+        }
+
+        /* ==========================================================================
+           7. التصدير والاستيراد واستعادة البيانات الافتراضية (Backup & Restore)
+           ========================================================================== */
+        function exportBackupJSON() {
+            const dataStr = JSON.stringify(siteData, null, 2);
+            const blob = new Blob([dataStr], { type: "application/json" });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement("a");
+            a.href = url;
+            a.download = `saud-school-branch2-backup-${new Date().toISOString().slice(0,10)}.json`;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+            showToast("تم تحميل ملف النسخة الاحتياطية (JSON) بنجاح!");
+        }
+
+        function importBackupJSON(e) {
+            const file = e.target.files[0];
+            if (!file) return;
+
+            const reader = new FileReader();
+            reader.onload = function(evt) {
+                try {
+                    const imported = JSON.parse(evt.target.result);
+                    if (imported && Array.isArray(imported.events) && Array.isArray(imported.videos)) {
+                        siteData = imported;
+                        saveSiteData("تم استيراد البيانات وتحديث الموقع بنجاح!");
+                    } else {
+                        alert("ملف JSON غير متوافق مع هيكل بيانات الموقع.");
+                    }
+                } catch (err) {
+                    alert("حدث خطأ أثناء قراءة ملف النسخة الاحتياطية.");
+                }
+            };
+            reader.readAsText(file);
+            e.target.value = "";
+        }
+
+        function resetToDefaultData() {
+            if (!confirm("هل أنت متأكد من استعادة البيانات الافتراضية؟ سيتم مسح أي تعديلات إضافية قمت بها.")) return;
+            siteData = JSON.parse(JSON.stringify(DEFAULT_SITE_DATA));
+            saveSiteData("تمت استعادة البيانات الافتراضية للموقع!");
+        }
+
+        /* ==========================================================================
+           8. دوال مساعدة (قائمة الجوال، التاريخ العربي، الحماية، الإشعارات)
+           ========================================================================== */
+        function toggleMobileDrawer() {
+            document.getElementById("mobileDrawer").classList.toggle("open");
+            document.getElementById("drawerOverlay").classList.toggle("open");
+        }
+
+        function formatArabicDate(dateStr) {
+            if (!dateStr) return "";
+            try {
+                const d = new Date(dateStr);
+                if (isNaN(d.getTime())) return dateStr;
+                return d.toLocaleDateString("ar-AE", { year: "numeric", month: "long", day: "numeric" });
+            } catch (e) {
+                return dateStr;
+            }
+        }
+
+        function escapeHtml(str) {
+            if (typeof str !== "string") return "";
+            return str
+                .replace(/&/g, "&amp;")
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;")
+                .replace(/"/g, "&quot;")
+                .replace(/'/g, "&#039;");
+        }
+
+        let toastTimer = null;
+        function showToast(message) {
+            const toast = document.getElementById("toastBox");
+            document.getElementById("toastMessage").textContent = message;
+            toast.classList.add("show");
+            clearTimeout(toastTimer);
+            toastTimer = setTimeout(() => {
+                toast.classList.remove("show");
+            }, 3200);
+        }
+
+        // تفعيل الرابط النشط في الشريط العلوي أثناء التمرير
+        window.addEventListener("scroll", () => {
+            const sections = ["home", "events", "videos", "achievements", "contact"];
+            const scrollPos = window.scrollY + 130;
+            sections.forEach(secId => {
+                const el = document.getElementById(secId);
+                if (el && scrollPos >= el.offsetTop && scrollPos < el.offsetTop + el.offsetHeight) {
+                    document.querySelectorAll(".nav-links a").forEach(a => {
+                        a.classList.toggle("active", a.getAttribute("href") === "#" + secId);
+                    });
+                }
+            });
+        });
+
+        // تشغيل الموقع فور تحميل الصفحة
+        document.addEventListener("DOMContentLoaded", () => {
+            renderAllSections();
+        });
+    </script>
+</body>
+</html>
